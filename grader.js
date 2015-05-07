@@ -36,22 +36,34 @@ module.exports = {
 			return "You forgot the array, oopsie.";
 		} 
 		// rank items in array from lowest to highest
-		// if arr.length is odd? take the center item in the array
-		// and return that
-		// if arr.length is even? take the center two items in the array
-		// and average them and return the result
-		
+		// use the bubbleSort function we created previously
 		else if (arr){
-
-			// order the items from smallest to largest
-			// look for largest and push it to the end
-			for (i = 0; i < arr.length; i++){
-
+			
+			for(var i = 0; i < arr.length; i++){
+				for(var j = 0; j < arr.length; j++){
+					if(arr[j] > arr[j+1]){
+						var temp = arr[j];	
+						arr[j] = arr[j+1];
+						arr[j+1] = temp;
+					}
+				}
+			} 
+			
+			// if arr.length is even? take the center two items in the array
+			// and average them and return the result
+			if (arr.length % 2 === 0){
+			
 			}
-			// 
-		
-		}
-	},
+			// if arr.length is odd? take the center item in the array
+			// and return that
+		 	else {
+				for (i = 0; i < arr.length; i++){
+				
+			}
+			 return arr;	
+		}		
+		},
+
 	
 	modeScore : function(arr){
 		if (!arr){
