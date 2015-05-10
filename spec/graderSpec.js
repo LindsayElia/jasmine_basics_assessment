@@ -30,13 +30,14 @@ describe("Letter Grader functions", function(){
 	});
 	
 	it("should return the median when given an array of numbers", function(){
-		expect(app.medianScore([52,80,80,86,94])).toEqual(80);
+		expect(app.medianScore([52,8,80,66,94])).toEqual(66);
+		expect(app.medianScore([52,8,80,66,94,77])).toEqual(71.5);  // want to return 71.5 from the average of 66 and 77
 
 		expect(app.medianScore()).toEqual("You forgot the array, oopsie.");
 	});
 	
-	xit("should return the mode when given an array of numbers", function(){
-		expect(app.modeScore([82, 92, 75, 91, 92, 89, 95, 100, 86])).toEqual(86);
+	it("should return the mode when given an array of numbers", function(){
+		expect(app.modeScore([82, 92, 75, 91, 92, 89, 95, 100, 86, 92])).toEqual(92);
 
 		expect(app.modeScore()).toEqual("You forgot the array, oopsie.");
 	});
